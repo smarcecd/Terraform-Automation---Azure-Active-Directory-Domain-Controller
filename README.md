@@ -43,12 +43,13 @@ Before starting, ensure the following are ready:
 
 ## 🗂️ Folder Structure
 
+```bash
 az-ad-vm/
 ├── main.tf            # All Azure resources + Custom Script Extension
 ├── variables.tf       # Input variable declarations
 ├── outputs.tf         # Public IP, domain name, admin user outputs
 └── terraform.tfvars   # Your personal values (⚠️ do not commit to Git)
-
+```
 
 ---
 
@@ -56,7 +57,7 @@ az-ad-vm/
 
 Run this single command on PowerShell to create the project directory and all four Terraform files:
 
-```bash
+```powershell
 mkdir -p ~/repos/az-ad-vm && cd ~/repos/az-ad-vm && \
   touch main.tf variables.tf outputs.tf terraform.tfvars
 ```
