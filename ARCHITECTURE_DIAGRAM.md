@@ -138,10 +138,9 @@ The DSRM (Directory Services Restore Mode) password, set separately during deplo
 <img width="1024" height="1024" alt="Actie Directory structure1" src="https://github.com/user-attachments/assets/a7414a70-1a53-44a2-83cf-5a63a64296ff" />
 
 
-```
-
 
 ---
+
 
 ## ⏱️ Provisioning Timeline
 
