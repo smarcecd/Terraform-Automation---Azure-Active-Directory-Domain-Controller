@@ -33,6 +33,7 @@ winget install -e --id Hashicorp.Terraform
 <img width="671" height="208" alt="terraform update" src="https://github.com/user-attachments/assets/932a327a-9da7-4b1b-bc7f-ff5e9e80701e" />
 
 
+
 - If you want to install and specific version:
 
 ```powershell
@@ -40,6 +41,7 @@ winget install -e --id Hashicorp.Terraform
  winget install -e --id Hashicorp.Terraform --version 1.12.2
 
 ```
+
 
 - If you want to uninstall it:
 
@@ -49,6 +51,7 @@ Open a PowerShell window as admin and type: winget uninstall -e --id Hashicorp.T
 ```
 
 
+
 **Install Azure CLI on Windows machine using PowerShell command**
 
 Open a PowerShell window as admin and type:
@@ -56,6 +59,7 @@ Open a PowerShell window as admin and type:
 ```powershell 
 winget install Microsoft.AzureCLI
 ```
+
 
 <img width="951" height="215" alt="install Azure CLI" src="https://github.com/user-attachments/assets/c023d977-59cf-433f-831b-02ef9da87de3" />
 
@@ -68,17 +72,22 @@ winget install Microsoft.AzureCLI
 
 In the terminal, PowerShell or Visual Studio Code, window type:
 
+
 ```powershell 
 az login
 
 ```
 
+
 It will to launch a window and you should select your subscription.
+
 
 <img width="796" height="456" alt="select account" src="https://github.com/user-attachments/assets/72d2edba-f8d4-4273-bf0c-2d8fe7ed2a1a" />
 
 
+
 Copy the subscription ID.
+
 
 ```powershell 
 az account set --subscription "<your-subscription-id>"
