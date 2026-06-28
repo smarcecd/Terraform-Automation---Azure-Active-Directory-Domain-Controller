@@ -1,0 +1,1 @@
+# Terraform-Automation---Azure-Active-Directory-Domain-Controller
