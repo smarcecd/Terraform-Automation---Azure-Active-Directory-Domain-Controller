@@ -1,4 +1,3 @@
-<img width="671" height="208" alt="terraform update" src="https://github.com/user-attachments/assets/a3e72c51-c55f-4b7b-a760-37cfb9cba92c" />
 # 🖥️ Terraform installation and connection to Azure
 
 Terraform is an open-source Infrastructure as Code (IaC) tool developed by HashiCorp that lets you define, provision, and manage cloud resources using declarative configuration files. 
@@ -22,8 +21,6 @@ Before you begin, ensure you have the following:
 
 **Install Terraform on Windows machine using PowerShell command**
 
-<img width="671" height="208" alt="terraform update" src="https://github.com/user-attachments/assets/7aa0102c-38a7-431c-bfc6-d2df618c3403" />
-
 
 - If you want to install the latest version, Open a PowerShell window as admin and type: 
 
@@ -32,6 +29,9 @@ Before you begin, ensure you have the following:
 winget install -e --id Hashicorp.Terraform
 
 ```
+
+<img width="671" height="208" alt="terraform update" src="https://github.com/user-attachments/assets/932a327a-9da7-4b1b-bc7f-ff5e9e80701e" />
+
 
 - If you want to install and specific version:
 
@@ -53,12 +53,12 @@ Open a PowerShell window as admin and type: winget uninstall -e --id Hashicorp.T
 
 Open a PowerShell window as admin and type:
 
-<img width="951" height="215" alt="install Azure CLI" src="https://github.com/user-attachments/assets/2e9c9ae3-b03f-4d9a-8523-18942b2f43a5" />
-
-
 ```powershell 
 winget install Microsoft.AzureCLI
 ```
+
+<img width="951" height="215" alt="install Azure CLI" src="https://github.com/user-attachments/assets/c023d977-59cf-433f-831b-02ef9da87de3" />
+
 
 
 ---
@@ -74,6 +74,9 @@ az login
 ```
 
 It will to launch a window and you should select your subscription.
+
+<img width="796" height="456" alt="select account" src="https://github.com/user-attachments/assets/72d2edba-f8d4-4273-bf0c-2d8fe7ed2a1a" />
+
 
 Copy the subscription ID.
 
