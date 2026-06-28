@@ -384,7 +384,7 @@ Destroy all resources when you are finished:
 
 ```bash
 terraform destroy
-```bash
+```
 
 This removes the resource group and everything inside it — VM, OS disk, NIC, public IP, NSG, VNet, and subnet.
 
