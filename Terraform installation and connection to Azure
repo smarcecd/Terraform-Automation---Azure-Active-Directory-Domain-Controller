@@ -24,23 +24,18 @@ Before you begin, ensure you have the following:
 - If you want to install the latest version, Open a PowerShell window as admin and type: 
 
 ```powershell
-
 winget install -e --id Hashicorp.Terraform
-
 ```
 
 - If you want to install and specific version:
 
 ```powershell
-
  winget install -e --id Hashicorp.Terraform --version 1.12.2
-
 ```
 
 - If you want to uninstall it:
 
 ```powershell 
-
 Open a PowerShell window as admin and type: winget uninstall -e --id Hashicorp.Terraform
 ```
 
@@ -63,7 +58,6 @@ In the terminal, PowerShell or Visual Studio Code, window type:
 
 ```powershell 
 az login
-
 ```
 
 It will to launch a window and you should select your subscription.
