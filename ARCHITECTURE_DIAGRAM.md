@@ -145,17 +145,27 @@ The DSRM (Directory Services Restore Mode) password, set separately during deplo
 
 ## ⏱️ Provisioning Timeline
 
-```bash
-terraform apply
-│
-├── [0–2 min]   Resource Group, VNet, Subnet, Public IP, NSG, NIC
-├── [2–7 min]   Windows Server 2022 VM deployment
-├── [7–10 min]  CustomScriptExtension runs PowerShell
-│               ├── Install-WindowsFeature AD-Domain-Services
-│               ├── Import-Module ADDSDeployment
-│               └── Install-ADDSForest corp.sandy.com
-└── [10–15 min] 🔁 Automatic reboot → Domain Controller ready
+```mermaid
+gantt
+    title terraform apply — Provisioning Timeline
+    dateFormat m
+    axisFormat %M min
+
+    section Networking
+    Resource Group, VNet, Subnet, Public IP, NSG, NIC  :a1, 0, 2m
+
+    section Virtual Machine
+    Windows Server 2022 VM deployment                  :a2, after a1, 5m
+
+    section AD DS Setup
+    Install-WindowsFeature AD-Domain-Services          :a3, after a2, 1m
+    Import-Module ADDSDeployment                       :a4, after a3, 1m
+    Install-ADDSForest corp.sandy.com                  :a5, after a4, 1m
+
+    section Completion
+    Automatic reboot → Domain Controller ready         :a6, after a5, 5m
 ```
+
 
 
 ✅ RDP is available ~5–10 minutes after terraform apply completes.
