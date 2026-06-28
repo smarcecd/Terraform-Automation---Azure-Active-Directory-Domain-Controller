@@ -395,5 +395,5 @@ terraform destroy
 This removes the resource group and everything inside it — VM, OS disk, NIC, public IP, NSG, VNet, and subnet.
 
 
-## 🧪 Lab authored for educational purposes. Customize domain_name, yourname, and passwords before deploying. Always destroy lab resources when done to avoid unnecessary Azure charges.
+**Lab authored for educational purposes. Customize domain_name, yourname, and passwords before deploying. Always destroy lab resources when done to avoid unnecessary Azure charges.**
 
