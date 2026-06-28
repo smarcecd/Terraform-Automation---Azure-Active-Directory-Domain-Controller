@@ -89,9 +89,84 @@ sequenceDiagram
 
 ## 🌐 Network Layout
 
+```mermaid
+
+Internet
+    │
+    │  TCP 3389 (RDP)
+    ▼
+┌─────────────────────────────────────────────────────────┐
+│  Public IP: pip-ad-yourname  (Static, Standard SKU)     │
+└────────────────────────┬────────────────────────────────┘
+                         │
+┌────────────────────────▼────────────────────────────────┐
+│  Virtual Network: vnet-ad-yourname  [ 10.0.0.0/16 ]     │
+│                                                          │
+│  ┌────────────────────────────────────────────────────┐  │
+│  │  Subnet: snet-ad  [ 10.0.1.0/24 ]                 │  │
+│  │                                                    │  │
+│  │  ┌──────────────────────────────────────────────┐  │  │
+│  │  │  NSG: nsg-ad-yourname                        │  │  │
+│  │  │  Rule: allow-rdp · TCP 3389 · Inbound ✅     │  │  │
+│  │  └──────────────────┬───────────────────────────┘  │  │
+│  │                     │                              │  │
+│  │  ┌──────────────────▼───────────────────────────┐  │  │
+│  │  │  NIC: nic-ad-yourname                        │  │  │
+│  │  │  Private IP: 10.0.1.4 (Static)               │  │  │
+│  │  └──────────────────┬───────────────────────────┘  │  │
+│  │                     │                              │  │
+│  │  ┌──────────────────▼───────────────────────────┐  │  │
+│  │  │  VM: vm-ad-yourname                          │  │  │
+│  │  │  Windows Server 2022 Datacenter              │  │  │
+│  │  │  Size: Standard_D2s_v3                       │  │  │
+│  │  │  Disk: Premium_LRS · 127 GB                  │  │  │
+│  │  │  Admin: adadmin                              │  │  │
+│  │  │                                              │  │  │
+│  │  │  ┌─────────────────────────────────────┐    │  │  │
+│  │  │  │  CustomScriptExtension              │    │  │  │
+│  │  │  │  ▸ Installs AD DS role              │    │  │  │
+│  │  │  │  ▸ Installs DNS                     │    │  │  │
+│  │  │  │  ▸ Promotes to new forest           │    │  │  │
+│  │  │  │  ▸ Domain: corp.sandy.com           │    │  │  │
+│  │  │  │  ▸ NetBIOS: CORP                    │    │  │  │
+│  │  │  │  ▸ Forest Mode: WinThreshold        │    │  │  │
+│  │  │  │  ▸ Auto-reboot on completion        │    │  │  │
+│  │  │  └─────────────────────────────────────┘    │  │  │
+│  │  └──────────────────────────────────────────────┘  │  │
+│  └────────────────────────────────────────────────────┘  │
+└──────────────────────────────────────────────────────────┘
+
+
+```
+
 ---
 
 ## 🔐 Active Directory Structure
+
+```mermaid
+Forest Root
+└── corp.sandy.com  (WinThreshold)
+    │
+    └── Domain: corp.sandy.com  (WinThreshold)
+        │
+        ├── Domain Controllers
+        │   └── vm-ad-yourname  (Primary DC)
+        │       ├── AD DS Role ✅
+        │       └── DNS Role ✅  (Integrated)
+        │
+        ├── Built-in OUs
+        │   ├── Domain Controllers
+        │   ├── Users
+        │   ├── Computers
+        │   └── Groups
+        │
+        └── Admin Account
+            └── adadmin
+                ├── Login: CORP\adadmin
+                └── UPN:   adadmin@corp.sandy.com
+
+
+```
 
 
 ---
