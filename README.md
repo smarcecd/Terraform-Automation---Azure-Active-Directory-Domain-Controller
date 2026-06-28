@@ -375,7 +375,6 @@ For the AD configuration, you can follow the guides below:
 
 - [![Active Directory Lab on Azure](https://raw.githubusercontent.com/smarcecd/active-directory-az-vm-lab/main/ARCHITECTURE_DIAGRAM.png)](https://github.com/smarcecd/active-directory-az-vm-l-lab)
 
-
 ---
 
 ## 🧹 Teardown
