@@ -116,12 +116,24 @@ sequenceDiagram
 
 ## 🌐 Network Layout
 
+All resources are deployed inside a single Virtual Network (vnet-ad-yourname, 10.0.0.0/16) with the domain controller isolated in a dedicated subnet (snet-ad, 10.0.1.0/24). 
+
+A Network Security Group controls inbound traffic, allowing only RDP on port 3389. The VM's NIC holds a static private IP of 10.0.1.4, while a Standard Static Public IP provides external access for RDP connectivity.
+
 <img width="1024" height="1024" alt="Network layout" src="https://github.com/user-attachments/assets/e908dd52-f3fb-4a84-a325-a83fe05527db" />
 
 
 ---
 
 ## 🔐 Active Directory Structure
+
+The lab provisions a single-domain Active Directory forest rooted at corp.sandy.com, operating at Windows Server 2016 (WinThreshold) functional level for both the forest and the domain. 
+
+The VM vm-ad-yourname serves as the sole Primary Domain Controller (PDC), hosting both the AD DS and integrated DNS roles. Upon promotion, Active Directory automatically creates a set of default Organizational Units — including Domain Controllers, Users, Computers, and Groups — providing the standard structure for managing domain objects. 
+
+The built-in administrator account adadmin is the initial domain admin, accessible via the domain prefix CORP\adadmin or the full UPN adadmin@corp.sandy.com. 
+
+The DSRM (Directory Services Restore Mode) password, set separately during deployment via the dsrm_password variable, serves as a recovery credential and should be stored securely — it is only needed if the domain controller requires offline repair or AD database restoration.
 
 <img width="1024" height="1024" alt="Actie Directory structure1" src="https://github.com/user-attachments/assets/a7414a70-1a53-44a2-83cf-5a63a64296ff" />
 
