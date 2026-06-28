@@ -39,6 +39,9 @@ Before starting, ensure the following are ready:
 - [ ] Active Azure subscription with permissions to create resources
 - [ ] A local directory to store Terraform files
 
+To learn how to Install Terraform and connect it to your Azure susbscription, please check on: 
+[🖥️ Terraform installation and connection to Azure](https://github.com/smarcecd/Terraform-Automation---Azure-Active-Directory-Domain-Controller/blob/main/Terraform%20Install%20and%20Azure%20connection.md)
+
 ---
 
 ## 🗂️ Folder Structure
