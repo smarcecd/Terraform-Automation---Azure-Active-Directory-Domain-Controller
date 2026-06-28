@@ -8,9 +8,12 @@
 ## 🗺️ High-Level Architecture
 
 This lab provisions a fully automated Active Directory environment on Microsoft Azure using Terraform as the sole deployment tool. 
+
 At its core, a Windows Server 2022 virtual machine sits inside a dedicated Virtual Network (10.0.0.0/16), isolated within a single subnet (10.0.1.0/24) and protected by a Network Security Group that permits inbound RDP traffic on port 3389. 
 The VM is assigned a static private IP (10.0.1.4) via its network interface and is reachable from the internet through a Standard Static Public IP. 
+
 Once the VM is online, a Custom Script Extension automatically executes a PowerShell command that installs the AD DS role, configures integrated DNS, and promotes the server to the root of a new Active Directory forest (corp.sandy.com, NetBIOS: CORP) — all within a single terraform apply, requiring no manual post-deployment configuration.
+
 
 ```mermaid
 graph TB
