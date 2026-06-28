@@ -51,6 +51,25 @@ graph TB
 
 ## 🔄 Deployment Flow
 
+The following steps describe the exact sequence Terraform executes from terraform apply to a fully operational domain controller:
+
+Create the Resource Group — Terraform provisions rg-ad-yourname in the East US region, establishing the logical container for all subsequent resources.
+
+Build the Networking Layer — The Virtual Network (vnet-ad-yourname, 10.0.0.0/16), subnet (snet-ad, 10.0.1.0/24), Static Public IP, and Network Security Group (RDP rule, port 3389) are created in parallel.
+
+Provision the Network Interface — The NIC (nic-ad-yourname) is created and assigned a static private IP (10.0.1.4), then associated with the NSG and Public IP.
+
+Deploy the Virtual Machine — Windows Server 2022 Datacenter (Standard_D2s_v3, Premium_LRS, 127 GB) is provisioned using the NIC. AutoLogon is enabled for the first boot via additional_unattend_content.
+
+Run the Custom Script Extension — Once the VM is running, Terraform deploys the install-ad-ds extension, which fires a PowerShell command that installs the AD DS and DNS roles using Install-WindowsFeature.
+
+Promote to Domain Controller — Install-ADDSForest is called to create a new forest (corp.sandy.com, NetBIOS: CORP, Forest Mode: WinThreshold) with integrated DNS.
+
+Automatic Reboot — The server reboots automatically after promotion. The domain controller is fully operational approximately 10–15 minutes after terraform apply completes.
+
+✅ After the reboot, connect via RDP using CORP\adadmin or adadmin@corp.sandy.com.
+
+
 ```mermaid
 sequenceDiagram
     actor User
