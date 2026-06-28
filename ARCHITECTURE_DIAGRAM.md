@@ -145,7 +145,7 @@ The DSRM (Directory Services Restore Mode) password, set separately during deplo
 
 ## ⏱️ Provisioning Timeline
 
-```powershell
+```bash
 terraform apply
 │
 ├── [0–2 min]   Resource Group, VNet, Subnet, Public IP, NSG, NIC
@@ -155,7 +155,6 @@ terraform apply
 │               ├── Import-Module ADDSDeployment
 │               └── Install-ADDSForest corp.sandy.com
 └── [10–15 min] 🔁 Automatic reboot → Domain Controller ready
-
 ```
 
 ✅ RDP is available ~5–10 minutes after terraform apply completes.
