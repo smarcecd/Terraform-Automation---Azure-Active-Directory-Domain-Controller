@@ -145,7 +145,7 @@ The DSRM (Directory Services Restore Mode) password, set separately during deplo
 
 ## ⏱️ Provisioning Timeline
 
-```bash
+```mermaid
 terraform apply
 │
 ├── [0–2 min]   Resource Group, VNet, Subnet, Public IP, NSG, NIC
