@@ -371,13 +371,10 @@ az vm extension show \
 
 For the AD configuration, you can follow the guides below:
 
-- 🔐 **Active Directory Server Lab**  
-  https://github.com/smarcecd/active-directory-az-vm-lab
+- 🔐 **Active Directory Server Lab**   https://github.com/smarcecd/active-directory-az-vm-lab
 
 
-- ⚡ **AD PowerShell Automation Guide**  
-  https://github.com/smarcecd/active-directory-az-vm-lab/blob/main/AD_POWERSHELL_GUIDE.md
-
+- ⚡ **AD PowerShell Automation Guide**  https://github.com/smarcecd/active-directory-az-vm-lab/blob/main/AD_POWERSHELL_GUIDE.md
 
 ---
 
