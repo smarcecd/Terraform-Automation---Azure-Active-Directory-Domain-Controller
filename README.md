@@ -371,11 +371,12 @@ az vm extension show \
 
 For the AD configuration, you can follow the guides below:
 
-- [![AD PowerShell Guide](https://img.shields.io/badge/Active%20Directory%20PowerShell%20Guide-Open%20File-blue?logo=powershell)](https://github.com/smarcecd/active-directory-az-vm-lab/blob/main/AD_POWERSHELL_GUIDE.md)
+- 🔐 **Active Directory Server Lab**  
+  https://github.com/smarcecd/active-directory-az-vm-lab
 
 
-- - [![Active Directory Lab on Azure](https://raw.githubusercontent.com/smarcecd/active-directory-az-vm-lab/main/ARCHITECTURE_DIAGRAM.png)](https://github.com/smarcecd/active-directory-az-vm-lab)
-
+- ⚡ **AD PowerShell Automation Guide**  
+  https://github.com/smarcecd/active-directory-az-vm-lab/blob/main/AD_POWERSHELL_GUIDE.md
 
 
 ---
